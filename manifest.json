@@ -1,0 +1,74 @@
+{
+  "manifest_version": 3,
+  "name": "BetterLooksmax Plugin Framework",
+  "version": "1.0.0",
+  "description": "A Vencord-style plugin framework for browser extensions with dynamic plugin loading and auto-generated settings UI",
+  "author": "BetterLooksmax Team",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content-loader.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "BetterLooksmax Settings"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/content.js",
+        "src/core/PluginLoader.js",
+        "src/core/PluginRegistry.js",
+        "src/core/LifecycleManager.js",
+        "src/core/SettingsStore.js",
+        "src/core/HookSystem.js",
+        "src/core/IPCManager.js",
+        "src/core/StorageAdapter.js",
+        "src/core/UIGenerator.js",
+        "src/api/PluginAPI.js",
+        "src/debug/DebugPanel.js",
+        "utils/dom.js",
+        "utils/logger.js",
+        "utils/validators.js",
+        "utils/dompurify.min.js",
+        "utils/sanitizer.js",
+        "plugins/plugins.json",
+        "plugins/public-mode/index.js",
+        "plugins/greycel-filter/index.js",
+        "plugins/plugin-template/index.js",
+        "plugins/text-presets/index.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "betterlooksmax@framework.extension",
+      "strict_min_version": "109.0"
+    }
+  }
+}

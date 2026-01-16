@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "description": "BetterLooksmax Plugin Registry - Add your plugin directory here to enable auto-discovery",
+  "plugins": [
+    {
+      "id": "public-mode",
+      "path": "plugins/public-mode",
+      "enabled": true
+    },
+    {
+      "id": "greycel-filter",
+      "path": "plugins/greycel-filter",
+      "enabled": true
+    },
+    {
+      "id": "text-presets",
+      "path": "plugins/text-presets",
+      "enabled": true
+    }
+  ]
+}

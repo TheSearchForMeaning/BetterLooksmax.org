@@ -1,0 +1,20 @@
+# Build output
+dist-firefox/
+dist-chrome/
+*.zip
+*.xpi
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
